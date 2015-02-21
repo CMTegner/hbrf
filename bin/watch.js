@@ -1,17 +1,26 @@
 var fs = require('fs');
+var path = require('path');
 var watchify = require('watchify');
+var exorcist = require('exorcist');
+var moment = require('moment');
 var createBundle = require('./create-bundle.js');
 
+var dest = path.join(__dirname, '..', 'bundle.js');
 var bundle = createBundle();
 
-bundle.bundle()
-    .pipe(fs.createWriteStream('bundle.js'));
+console.log('Building...');
 
-console.log('watching...');
+bundle.bundle()
+    .on('end', function () {
+        console.log('Watching...');
+    })
+    .pipe(exorcist(dest + '.map', '/bundle.js.map'))
+    .pipe(fs.createWriteStream(dest));
 
 watchify(bundle)
     .on('update', function () {
         bundle.bundle()
-            .pipe(fs.createWriteStream('bundle.js'));
-        console.log('Bundle updated!');
+            .pipe(exorcist(dest + '.map', '/bundle.js.map'))
+            .pipe(fs.createWriteStream(dest));
+        console.log('Bundle updated at %s', moment().format('HH:mm:ss'));
     });
