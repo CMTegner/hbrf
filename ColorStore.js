@@ -10,7 +10,7 @@ var colors = [
     'yellow'
 ];
 
-class MessageStore extends EventEmitter {
+class ColorStore extends EventEmitter {
     constructor() {
         this[color] = colors[0];
         Dispatcher.register(payload => {
@@ -35,4 +35,4 @@ class MessageStore extends EventEmitter {
     }
 }
 
-module.exports = new MessageStore();
+module.exports = new ColorStore();
