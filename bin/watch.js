@@ -20,7 +20,9 @@ bundle.bundle()
 watchify(bundle)
     .on('update', function () {
         bundle.bundle()
+            .on('end', function () {
+                console.log('Bundle updated at %s', moment().format('HH:mm:ss'));
+            })
             .pipe(exorcist(dest + '.map', '/bundle.js.map'))
             .pipe(fs.createWriteStream(dest));
-        console.log('Bundle updated at %s', moment().format('HH:mm:ss'));
     });
