@@ -11,7 +11,7 @@ module.exports = React.createClass({
         ColorStore.on('change', this._onChange);
     },
     componentWillUnmount: function () {
-        ColorStore.off('change', this._onChange);
+        ColorStore.removeListener('change', this._onChange);
     },
     _onChange: function () {
         this.setState({ color: ColorStore.getColor() });
