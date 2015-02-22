@@ -19,6 +19,7 @@ bundle.bundle()
 
 watchify(bundle)
     .on('update', function () {
+        console.log('Updating bundle...');
         bundle.bundle()
             .on('end', function () {
                 console.log('Bundle updated at %s', moment().format('HH:mm:ss'));
