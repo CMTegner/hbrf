@@ -10,7 +10,7 @@ module.exports = React.createClass({
     componentDidMount: function () {
         ColorStore.on('change', this._onChange);
     },
-    componentDidUnmount: function () {
+    componentWillUnmount: function () {
         ColorStore.off('change', this._onChange);
     },
     _onChange: function () {
