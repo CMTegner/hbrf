@@ -1,9 +1,9 @@
-var React = require('react');
-var ColorStore = require('./ColorStore.js');
-var Dispatcher = require('./AppDispatcher.js');
-var Constants = require('./Constants.js');
+import React from 'react';
+import ColorStore from './ColorStore.js';
+import Dispatcher from './AppDispatcher.js';
+import Constants from './Constants.js';
 
-module.exports = React.createClass({
+export default React.createClass({
     getInitialState: function () {
         return { color: ColorStore.getColor() };
     },

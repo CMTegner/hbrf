@@ -1,5 +1,5 @@
-var React = require('react');
-var ColorButton = require('./color-button.jsx');
+import React from 'react';
+import ColorButton from './color-button.jsx';
 
 React.render(
     <ColorButton />,

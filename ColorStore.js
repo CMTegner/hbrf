@@ -1,6 +1,6 @@
-var EventEmitter = require('events');
-var Dispatcher = require('./AppDispatcher.js');
-var Constants = require('./Constants.js');
+import EventEmitter from 'events';
+import Dispatcher from './AppDispatcher.js';
+import Constants from './Constants.js';
 
 var color = Symbol('color');
 var colors = [
@@ -35,4 +35,4 @@ class ColorStore extends EventEmitter {
     }
 }
 
-module.exports = new ColorStore();
+export default new ColorStore();
