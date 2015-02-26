@@ -2,8 +2,8 @@ import EventEmitter from 'events';
 import Dispatcher from './AppDispatcher.js';
 import Constants from './Constants.js';
 
-var color = Symbol('color');
-var colors = [
+const color = Symbol('color');
+const colors = [
     'red',
     'cyan',
     'green',
@@ -20,7 +20,7 @@ class ColorStore extends EventEmitter {
                     this.emit('change');
                     break;
                 case Constants.ACTION_TYPES.CYCLE_COLOR:
-                    var index = colors.indexOf(this[color]);
+                    const index = colors.indexOf(this[color]);
                     if (index > -1) {
                         this[color] = colors[(index + 1) % colors.length];
                         this.emit('change');

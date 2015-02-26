@@ -17,11 +17,11 @@ export default React.createClass({
         this.setState({ color: ColorStore.getColor() });
     },
     onClick: function () {
-        var actionType = Constants.ACTION_TYPES.CYCLE_COLOR;
+        const actionType = Constants.ACTION_TYPES.CYCLE_COLOR;
         Dispatcher.dispatch({ actionType });
     },
     render: function () {
-        var style = {
+        const style = {
             padding: '20px',
             background: this.state.color
         };
