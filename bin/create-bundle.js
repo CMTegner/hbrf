@@ -1,10 +1,8 @@
 var browserify = require('browserify');
+var babelify = require('babelify');
 
 module.exports = function () {
     return browserify({ debug: true })
-        .add(require('es6ify').runtime)
-        .transform(require('reactify'))
-        // compile all .js files except the ones coming from node_modules
-        .transform(require('es6ify').configure(/^(?!.*node_modules)+.+\.jsx?$/))
+        .transform(babelify)
         .require(require.resolve('../index.jsx'), { entry: true });
 };
