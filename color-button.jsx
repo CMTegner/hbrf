@@ -4,23 +4,23 @@ import Dispatcher from './AppDispatcher.js';
 import Constants from './Constants.js';
 
 export default React.createClass({
-    getInitialState: function () {
+    getInitialState() {
         return { color: ColorStore.getColor() };
     },
-    componentDidMount: function () {
+    componentDidMount() {
         ColorStore.on('change', this._onChange);
     },
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         ColorStore.removeListener('change', this._onChange);
     },
-    _onChange: function () {
+    _onChange() {
         this.setState({ color: ColorStore.getColor() });
     },
-    onClick: function () {
+    onClick() {
         const actionType = Constants.ACTION_TYPES.CYCLE_COLOR;
         Dispatcher.dispatch({ actionType });
     },
-    render: function () {
+    render() {
         const style = {
             padding: '20px',
             background: this.state.color
