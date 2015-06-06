@@ -12,6 +12,7 @@ const colors = [
 
 class ColorStore extends EventEmitter {
     constructor() {
+        super();
         this[color] = colors[0];
         Dispatcher.register(payload => {
             switch (payload.actionType) {
