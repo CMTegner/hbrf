@@ -4,5 +4,5 @@ import ColorButton from './color-button.jsx';
 
 DOM.render(
     <ColorButton />,
-    document.body
+    document.getElementById("container")
 );
