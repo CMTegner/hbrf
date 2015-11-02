@@ -3,7 +3,7 @@ import ColorStore from './ColorStore.js';
 import Dispatcher from './AppDispatcher.js';
 import Constants from './Constants.js';
 
-export default class ColorButton extends Component {
+class ColorButton extends Component {
     constructor(props) {
         super(props);
         this.state = { color: ColorStore.getColor() };
@@ -35,3 +35,5 @@ export default class ColorButton extends Component {
         );
     }
 }
+
+export default ColorButton;
