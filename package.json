@@ -26,14 +26,14 @@
   },
   "homepage": "https://github.com/CMTegner/hbrf",
   "devDependencies": {
-    "babelify": "^6.1.2",
-    "browserify": "^10.2.3",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
     "exorcist": "^0.4.0",
     "flux": "^2.0.3",
     "httpster": "^1.0.1",
     "moment": "^2.10.3",
     "react": "^0.14.1",
     "react-dom": "^0.14.1",
-    "watchify": "^3.2.1"
+    "watchify": "^3.6.0"
   }
 }
