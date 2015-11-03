@@ -3,10 +3,10 @@ import React, { Component, PropTypes } from 'react';
 class ColorButton extends Component {
     static propTypes = {
         color: PropTypes.string.isRequired,
-        onCycleColor: PropTypes.func.isRequired
+        onClick: PropTypes.func.isRequired
     }
     render() {
-        const { color, onCycleColor } = this.props;
+        const { color, onClick } = this.props;
         const style = {
             padding: 20,
             background: color
@@ -15,7 +15,7 @@ class ColorButton extends Component {
             <input
                 type="button"
                 style={style}
-                onClick={onCycleColor}
+                onClick={onClick}
                 value="Click Me! ^^;;"
             />
         );
