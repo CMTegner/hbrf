@@ -1,8 +1,12 @@
 import React from 'react';
 import DOM from 'react-dom';
-import ColorButton from './color-button.jsx';
+import { Provider } from 'react-redux';
+import store from './store';
+import ColorButton from './containers/color-button';
 
 DOM.render(
-    <ColorButton />,
-    document.getElementById("container")
+    <Provider store={store}>
+        <ColorButton />
+    </Provider>,
+    document.getElementById('container')
 );
