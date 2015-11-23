@@ -4,6 +4,6 @@ import ColorButton from '../components/color-button.jsx';
 
 export default connect(
     ({ color }) => ({ color }),
-    dispatch => ({ onClick: () => dispatch(cycleColor()) })
+    dispatch => ({ onClick() { dispatch(cycleColor()); } })
 )(ColorButton);
 
