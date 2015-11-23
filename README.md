@@ -1,6 +1,6 @@
 # hbrf
 
-An application skeleton using Harmony, Browserify, React, and Flux
+An application skeleton using Harmony, Browserify, React, and Redux
 
 # Install
 
@@ -16,4 +16,4 @@ $ npm install
 $ npm run dev
 ```
 
-Now open point your browser to [http://localhost:3333](http://localhost:3333)
+Now point your browser to [http://localhost:3333](http://localhost:3333)
