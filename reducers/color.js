@@ -1,4 +1,4 @@
-import { SET_COLOR, CYCLE_COLOR } from '../actions/color';
+import { SET_COLOR, CYCLE_COLOR } from '../actions/color.js';
 
 const colors = [
     'red',
