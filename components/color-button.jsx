@@ -4,7 +4,7 @@ class ColorButton extends Component {
     static propTypes = {
         color: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired
-    }
+    };
     render() {
         const { color, onClick } = this.props;
         const style = {
